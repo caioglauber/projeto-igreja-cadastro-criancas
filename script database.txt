@@ -1,0 +1,19 @@
+
+create table responsavel(
+Id int not null auto_increment,
+Nome varchar(60) not null,
+Sexo enum ('M','F'),
+Telefone varchar(40),
+primary key(id)
+);
+
+create table crianca(
+id int not null auto_increment,
+Nome varchar(60) not null,
+Sexo enum ('M','F'),
+ResponsavelId int(11)  not null,
+Nacionalidade varchar(30) default 'Brasil',
+primary key (id),
+foreign key(ResponsavelId) references responsavel (id)
+);
+
